@@ -16,6 +16,7 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
+use App\Traits\InertiaResponseTrait;
 use Cake\Core\Configure;
 use Cake\Http\Exception\ForbiddenException;
 use Cake\Http\Exception\NotFoundException;
@@ -31,6 +32,8 @@ use Cake\View\Exception\MissingTemplateException;
  */
 class PagesController extends AppController
 {
+    use InertiaResponseTrait;
+
     /**
      * Displays a view
      *
@@ -70,4 +73,14 @@ class PagesController extends AppController
             throw new NotFoundException();
         }
     }
+
+    public function dashboard()
+    {
+        $page = [
+            'text' => 'hello world 1',
+            'other' => 'hello world 2',
+        ];
+        $this->set(compact('page'));
+    }
+
 }
