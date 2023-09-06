@@ -1,0 +1,29 @@
+version: '3'
+services:
+  psql13:
+    image: postgres:13
+    container_name: spa-postgres13
+    volumes:
+      - ./tmp/data/spa-postgres13__db:/var/lib/postgresql:delegated
+    environment:
+      - POSTGRES_USER=my_app
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=my_app
+      - PGUSER=my_app
+      - PGDATABASE=my_app
+      - PGPASSWORD=secret
+    ports:
+      - '6432:5432'
+
+  cakephp:
+    image: webdevops/php-nginx:8.1
+    container_name: spa-inertia-cakephp-vue
+    working_dir: /application
+    volumes:
+      - ./:/application:cached
+      - ~/.ssh:/home/application/.ssh:ro
+    environment:
+      - WEB_DOCUMENT_ROOT=/application/webroot
+      - DATABASE_URL=postgres://my_app:secret@spa-postgres13:5432/my_app
+    ports:
+      - "7099:80"
