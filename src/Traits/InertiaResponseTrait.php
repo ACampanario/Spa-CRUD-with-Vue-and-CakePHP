@@ -20,7 +20,7 @@ trait InertiaResponseTrait
     }
 
     /**
-     * Sets view class depending on detector.
+     * Sets view class
      *
      * @return void
      */
@@ -33,8 +33,6 @@ trait InertiaResponseTrait
 
     /**
      * Checks if response status code is 404.
-     *
-     * @return bool Returns true if response is error, false otherwise.
      */
     private function isErrorStatus(): bool
     {
@@ -50,8 +48,6 @@ trait InertiaResponseTrait
 
     /**
      * Checks if response status code is 500.
-     *
-     * @return bool Returns true if response is failure, false otherwise.
      */
     private function isFailureStatus(): bool
     {

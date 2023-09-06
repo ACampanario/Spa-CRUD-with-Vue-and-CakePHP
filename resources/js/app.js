@@ -13,8 +13,6 @@ Vue.use(VueMeta);
 
 let app = document.getElementById('app');
 
-console.log('vue app');
-
 new Vue({
     metaInfo: {
         titleTemplate: (title) => title ? `${title} - ` + AppName : AppName

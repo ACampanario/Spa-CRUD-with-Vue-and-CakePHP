@@ -7,22 +7,15 @@ use Cake\Routing\Router;
 use Cake\View\View;
 
 /**
- * Renders `Inertia./Inertia/app` view with provided view vars.
+ * Renders view with provided view vars
  */
 class InertiaWebView extends View
 {
-
-    /**
-     * @inheritDoc
-     */
     public function initialize(): void
     {
         $this->loadHelper('Inertia');
     }
 
-    /**
-     * @inheritDoc
-     */
     public function render(?string $view = null, $layout = null): string
     {
         $page = [
@@ -48,7 +41,7 @@ class InertiaWebView extends View
      * Returns component name.
      * If passed via controller using `component` key, will use that.
      * Otherwise, will return the combination of controller and action.
-     * `Users/Index` component for `UsersController.php`'s `index` action.
+     * example Users/Index component for UsersController.php's index action.
      */
     private function getComponentName(): string
     {
@@ -68,7 +61,7 @@ class InertiaWebView extends View
     }
 
     /**
-     * Returns `props` array excluding the default variables.
+     * Returns props array excluding the default variables.
      */
     private function getProps(): array
     {
@@ -84,8 +77,7 @@ class InertiaWebView extends View
                 continue;
             }
 
-            $prop = $passedViewVars[$varName];
-            $props[$varName] = $prop;
+            $props[$varName] = $passedViewVars[$varName];
         }
 
         return $props;
