@@ -34,6 +34,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+
+    <script src="/js/app.js" defer="defer"></script>
 </head>
 <body>
     <nav class="top-nav">
@@ -48,7 +50,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <main class="main">
         <div class="container">
             <?= $this->Flash->render() ?>
-            <?= $this->fetch('content') ?>
+            <?php echo $this->Inertia->make($page, 'app', ''); ?>
         </div>
     </main>
     <footer>
