@@ -26,7 +26,7 @@ trait InertiaResponseTrait
      */
     private function setViewBuilderClass(): void
     {
-        $viewClass = 'InertiaWeb';
+        $viewClass = 'Inertia';
 
         $this->viewBuilder()->setClassName("{$viewClass}");
     }

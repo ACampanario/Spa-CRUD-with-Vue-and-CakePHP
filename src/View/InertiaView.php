@@ -9,7 +9,7 @@ use Cake\View\View;
 /**
  * Renders view with provided view vars
  */
-class InertiaWebView extends View
+class InertiaView extends View
 {
     public function initialize(): void
     {
