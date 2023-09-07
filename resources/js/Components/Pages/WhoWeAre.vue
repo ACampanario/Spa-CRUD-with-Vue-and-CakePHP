@@ -2,7 +2,7 @@
     <div>
         <InertiaLink as="button" href="/">Home</InertiaLink>
         <InertiaLink as="button" href="/who-we-are">Who We Are</InertiaLink>
-        <div>Dashboard VUE</div>
+        <div>Who we are VUE</div>
         <p>{{page.text}}</p>
         <p>{{page.other}}</p>
     </div>

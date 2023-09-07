@@ -83,4 +83,13 @@ class PagesController extends AppController
         $this->set(compact('page'));
     }
 
+    public function whoWeAre()
+    {
+        $page = [
+            'text' => 'hello world 3',
+            'other' => 'hello world 4',
+        ];
+        $this->set(compact('page'));
+    }
+
 }
