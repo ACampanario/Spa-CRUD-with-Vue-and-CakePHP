@@ -27,7 +27,9 @@ trait InertiaResponseTrait
     private function setViewBuilderClass(): void
     {
         $viewClass = 'Inertia';
-
+        if ($this->getRequest()->is('inertia')) {
+            $viewClass = 'InertiaJson';
+        }
         $this->viewBuilder()->setClassName("{$viewClass}");
     }
 

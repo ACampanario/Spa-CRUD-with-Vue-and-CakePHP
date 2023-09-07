@@ -56,6 +56,7 @@ return static function (RouteBuilder $routes) {
          */
 
         $builder->connect('/', ['controller' => 'Pages', 'action' => 'dashboard']);
+        $builder->connect('/who-we-are', ['controller' => 'Pages', 'action' => 'whoWeAre']);
 
         /*
          * Connect catchall routes for all controllers.
