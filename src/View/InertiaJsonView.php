@@ -16,7 +16,6 @@ class InertiaJsonView extends JsonView
      */
     public function render(?string $view = null, $layout = null): string
     {
-        //debug(__METHOD__);
         $page = [
             'component' => $this->getComponentName(),
             'url' => $this->getCurrentUri(),
