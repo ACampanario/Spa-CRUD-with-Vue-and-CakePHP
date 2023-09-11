@@ -91,7 +91,7 @@
     import moment from 'moment'
     export default {
         props: {
-        category: Array,
+        category: Object|Array,
     },
     data() {
         return {

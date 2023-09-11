@@ -97,7 +97,7 @@
     import moment from 'moment'
     export default {
         props: {
-        page: Array,
+        page: Object|Array,
     },
     data() {
         return {

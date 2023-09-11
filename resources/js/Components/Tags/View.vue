@@ -73,7 +73,7 @@
     import moment from 'moment'
     export default {
         props: {
-        tag: Array,
+        tag: Object|Array,
     },
     data() {
         return {
