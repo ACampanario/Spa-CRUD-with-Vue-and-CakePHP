@@ -17,6 +17,18 @@ trait InertiaResponseTrait
         }
 
         $this->setViewBuilderClass();
+
+        $session = $this->getRequest()->getSession();
+        $flash = [];
+        if ($session->check('Flash.flash.0')) {
+            $flash = $session->read('Flash.flash.0');
+            $flash['element'] = strtolower(str_replace('/', '-', $flash['element']));
+            $session->delete('Flash');
+        }
+        $this->set('flash', $flash);
+
+        //set csrf token
+        $this->set('token', $this->getRequest()->getAttribute('csrfToken'));
     }
 
     /**
