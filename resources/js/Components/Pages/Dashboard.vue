@@ -1,7 +1,5 @@
 <template>
     <div>
-        <InertiaLink as="button" href="/">Home</InertiaLink>
-        <InertiaLink as="button" href="/who-we-are">Who We Are</InertiaLink>
         <div>Dashboard VUE</div>
         <p>{{page.text}}</p>
         <p>{{page.other}}</p>
@@ -9,6 +7,7 @@
 </template>
 
 <script>
+import Layout from '@/Components/Layout'
 export default {
     props: {
         page: [],
@@ -18,6 +17,7 @@ export default {
     mounted() {
         console.log('mounted');
         console.log('page', this.page);
-    }
+    },
+    layout: Layout
 }
 </script>

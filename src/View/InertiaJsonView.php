@@ -22,6 +22,8 @@ class InertiaJsonView extends JsonView
             'props' => $this->getProps(),
         ];
 
+        //\Cake\Log\Log::error(var_export($page,true));
+
         $this->setConfig('serialize', 'page');
         $this->set([
             'page' => $page,
