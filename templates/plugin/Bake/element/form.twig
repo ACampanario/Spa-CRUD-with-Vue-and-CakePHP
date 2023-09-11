@@ -92,7 +92,7 @@
             token: String,
             {{singularVar}}: Array,
             errors: Array,
-            flash: Array,
+            flash: Object|Array,
             {%- if associations.BelongsToMany is defined %}
                 {%- for assocName, assocData in associations.BelongsToMany %}
                     {{ assocData.property }}: Array,
@@ -101,7 +101,7 @@
             {% for field in fields %}
                 {%- if field not in primaryKey %}
                     {%- if keyFields[field] is defined %}
-                        {{ keyFields[field] }}: Array,
+                        {{ keyFields[field] }}: Object,
                     {%- endif %}
                 {%- endif %}
             {%- endfor %}
@@ -135,7 +135,7 @@
             }
         },
         mounted() {
-            console.log('Component mounted add tag.');
+            console.log('Component mounted.');
 
             {% if 'add' in action %}
                 {% for field in fields %}

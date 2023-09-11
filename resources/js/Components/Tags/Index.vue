@@ -66,7 +66,7 @@
   props: {
    tags: Array,
    token: String,
-   flash: Array,
+   flash: Object|Array,
    sort: String,
    direction: String,
    links: Array,

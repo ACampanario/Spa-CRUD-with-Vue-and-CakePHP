@@ -39,7 +39,7 @@
             token: String,
             category: Array,
             errors: Array,
-            flash: Array,                },
+            flash: Object|Array,                },
         components: {
             VueEditor, DatePicker, Multiselect
         },
@@ -55,7 +55,7 @@
             }
         },
         mounted() {
-            console.log('Component mounted add tag.');
+            console.log('Component mounted.');
 
                                                     this.form.title = ''
                         this.form.description = ''
